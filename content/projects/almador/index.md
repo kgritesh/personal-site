@@ -3,7 +3,10 @@ title: 'Almador'
 date: '2017-02-24T18:30:00.000Z'
 technologies: 'Node, api.ai'
 source: 'https://github.com/aravindballa/almador'
+type: 'project'
 link: ''
+banner: null
+published: false
 description: 'A personal facebook messenger bot which logs my work, inspires me, and sends messages on my behalf. It doesnot hesitate in answering simple and funny questions too.'
 ---
 

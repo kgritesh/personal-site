@@ -11,7 +11,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMdx.edges;
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title="Projects">
         <SEO frontmatter={{ title: 'Projects', slug: '/projects' }} />
         <p>
           I love building things. 👷 These are the stuff I built. <br />

@@ -2,18 +2,18 @@ const { normalizeUrl } = require('./src/utils/helpers');
 
 module.exports = {
   siteMetadata: {
-    title: 'Aravind Balla',
-    author: 'Aravind Balla',
-    image: 'https://aravindballa.com/avatar.jpg',
+    title: 'Ritesh Kadmawala',
+    author: 'Ritesh Kadmawala',
+    image: 'https://vertexcover.io/avatar.jpg',
     description: 'Discoveries and rants of a developer while developing stuff',
-    siteUrl: 'https://aravindballa.com/',
+    siteUrl: 'https://vertexcover.io/',
     social: {
       twitter: 'aravindballa',
     },
     organization: {
-      name: 'Aravind Balla',
-      url: 'https://aravindballa.com',
-      logo: 'https://aravindballa.com/logo.png',
+      name: 'Ritesh Kadmawala',
+      url: 'https://vertexcover.io',
+      logo: 'https://vertexcover.io/logo.png',
     },
   },
   pathPrefix: '/',
@@ -67,7 +67,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Aravind Balla`,
+        name: `Ritesh Kadmawala`,
         short_name: `AB`,
         start_url: `/`,
         background_color: `#151515`,
@@ -103,7 +103,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
@@ -134,7 +134,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'Aravindballa RSS Feed',
+            title: 'Ritesh Kadmawala RSS Feed',
           },
         ],
       },
@@ -143,7 +143,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => {
+          allSitePage.edges.map((edge) => {
             return {
               url: normalizeUrl(site.siteMetadata.siteUrl + edge.node.path),
               changefreq: `daily`,

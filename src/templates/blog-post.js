@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Img from 'gatsby-image';
 
-import Bio from '../components/Bio';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import {
@@ -34,10 +33,6 @@ class BlogPostTemplate extends React.Component {
           </StyledTech>
         )}
         <StyledPost>
-          {post.frontmatter.banner && <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />}
-          {post.frontmatter.bannercaption && (
-            <StyledImgCaption>{post.frontmatter.bannercaption}</StyledImgCaption>
-          )}
           <MDXRenderer>{post.body}</MDXRenderer>
         </StyledPost>
         <hr
@@ -45,7 +40,6 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
 
         <StyledNextPrev>
           <li>
@@ -86,14 +80,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         technologies
-        banner {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-        bannercaption
       }
       fields {
         slug
