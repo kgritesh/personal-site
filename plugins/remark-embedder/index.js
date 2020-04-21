@@ -5,9 +5,9 @@ const transformers = [getGithubHTML];
 
 module.exports = async ({ markdownAST }) => {
   const transformations = [];
-  visit(markdownAST, 'text', node => {
+  visit(markdownAST, 'text', (node) => {
     const { value } = node;
-    transformers.forEach(transformer => {
+    transformers.forEach((transformer) => {
       if (transformer.shouldTransform(value)) {
         transformations.push(async () => {
           const html = await transformer(value);
@@ -17,7 +17,7 @@ module.exports = async ({ markdownAST }) => {
       }
     });
   });
-  const promises = transformations.map(t => t());
+  const promises = transformations.map((t) => t());
   await Promise.all(promises);
 
   return markdownAST;

@@ -1,4 +1,4 @@
-exports.normalizeUrl = url => {
+exports.normalizeUrl = (url) => {
   // Remove duplicate slashes
   url = url.replace(/\/{2,}/g, '/');
 

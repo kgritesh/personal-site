@@ -2,7 +2,7 @@ const fs = require('fs');
 const { resolve } = require('path');
 const { createHash } = require('crypto');
 
-const getHtml = title => `
+const getHtml = (title) => `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,12 +76,7 @@ const writeCachedFile = async (CACHE_DIR, key, contents, extension) => {
   // I'm using the title as the key for the hash, because it's the only
   // thing which impacts the final image. If you were to have something
   // more elaborate, you should just use the HTML as the hash instead.
-  const fileName =
-    createHash('md5')
-      .update(key)
-      .digest('hex') +
-    '.' +
-    extension;
+  const fileName = createHash('md5').update(key).digest('hex') + '.' + extension;
   const absolutePath = resolve(CACHE_DIR, fileName);
   fs.writeFileSync(absolutePath, contents);
   return absolutePath;

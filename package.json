@@ -1,8 +1,8 @@
 {
-  "name": "ab-website-2019",
+  "name": "personal-website",
   "description": "A personal website",
   "version": "1.0.0",
-  "author": "Aravind Balla <bsaaravind@gmail.com>",
+  "author": "Ritesh Kadmawala <ritesh@vertexcover.io",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
@@ -49,13 +49,13 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^2.2.0",
-    "husky": "^4.2.3",
+    "husky": "^4.2.5",
     "jest": "^24.9.0",
     "jest-image-snapshot": "^3.0.1",
     "jest-puppeteer": "^4.3.0",
-    "lint-staged": "^8.1.5",
-    "puppeteer": "^2.1.1",
+    "lint-staged": "^10.1.6",
     "prettier": "^2.0.4",
+    "puppeteer": "^2.1.1",
     "start-server-and-test": "^1.10.11"
   },
   "homepage": "https://aravindballa.com",
@@ -69,12 +69,21 @@
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "start-server-and-test serve http-get://localhost:5000 jest",
     "jest": "jest -c tests/jest.config.js --runInBand",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'src/**/*.md' 'plugins/**/*.js'",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'content/**/*.md' 'plugins/**/*.js'",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "serve public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {

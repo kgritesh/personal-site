@@ -10,7 +10,6 @@ import { LinkedinIcon, GithubIcon, TwitterIcon, ResumeIcon, EmailIcon } from '..
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    console.log(data);
     const siteTitle = data.site.siteMetadata.title;
     const siteDescription = data.site.siteMetadata.description;
     const { email, phone, linkedinURL, twitterURL, githubURL } = data.about.frontmatter;
