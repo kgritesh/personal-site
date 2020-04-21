@@ -1,5 +1,6 @@
 ---
 title: 'About Me'
+type: 'bio'
 date: '2020-04-20T18:30:00.000Z'
 twitterURL: "https://twitter.com/krg85"
 linkedinURL: "https://www.linkedin.com/in/riteshkadmawala"

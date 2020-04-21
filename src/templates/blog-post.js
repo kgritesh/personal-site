@@ -5,12 +5,15 @@ import Img from 'gatsby-image';
 
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
+import PostFooter from '../components/PostFooter';
 import {
   StyledDate,
   StyledNextPrev,
   StyledTech,
   StyledPost,
   StyledImgCaption,
+  StyledCompany,
+  StyledLink,
 } from '../components/styles/post';
 import { rhythm, scale } from '../utils/typography';
 
@@ -20,27 +23,42 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title={post.frontmatter.title}>
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
-        <StyledDate>{post.frontmatter.date}</StyledDate>
+        <StyledDate>{post.frontmatter.period}</StyledDate>
         {post.frontmatter.technologies && (
           <StyledTech>
-            Tech used -{' '}
-            {post.frontmatter.technologies.split(',').map((tech, i) => (
-              <span key={`${tech.trim()}-${i}`}>{tech.trim()}</span>
-            ))}
+            <h4>Tech used </h4>
+            <div className="wrapper">
+              {post.frontmatter.technologies.split(',').map((tech, i) => (
+                <span key={`${tech.trim()}-${i}`}>{tech.trim()}</span>
+              ))}
+            </div>
           </StyledTech>
+        )}
+        {post.frontmatter.company && (
+          <StyledCompany>
+            <h4> Company</h4>
+            {': '}
+            <a target="_blank" href={post.frontmatter.companyURL} rel="noopener" aria-label="">
+              {post.frontmatter.company}
+            </a>
+          </StyledCompany>
+        )}
+        {post.frontmatter.link && (
+          <StyledLink>
+            <h4>Link</h4>
+            {': '}
+            <a target="_blank" href={post.frontmatter.link} rel="noopener" aria-label="">
+              {post.frontmatter.link}
+            </a>
+          </StyledLink>
         )}
         <StyledPost>
           <MDXRenderer>{post.body}</MDXRenderer>
         </StyledPost>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-
+        <PostFooter />
         <StyledNextPrev>
           <li>
             {previous && (
@@ -80,6 +98,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         technologies
+        link
+        company
+        period
       }
       fields {
         slug

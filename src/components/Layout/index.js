@@ -9,20 +9,26 @@ import UpdatePrompt from '../UpdatePrompt';
 
 const renderBreadcrumb = (pathname) => {
   // TODO: refactor this!
-  if (pathname.match(/projects/)) {
-    return <Link to={'/projects'}>projects</Link>;
-  } else if (pathname.match(/writings/)) {
-    return <Link to={'/writings'}>writings</Link>;
-  } else if (pathname.match(/talks/)) {
-    return <Link to={'/'}>talks</Link>;
-  } else {
-    return '';
+  const parts = pathname.match(/[^\/]+/g);
+  const crumbs = [<Link to={'/'}>Home /</Link>];
+  let link = '/';
+  for (let i = 0; i < parts.length - 1; ++i) {
+    link = link + parts[i] + '/';
+    crumbs.push(<Link to={link}>{` ${parts[i]} /`}</Link>);
   }
+  return (
+    <div>
+      {crumbs.map((crumb, index) => (
+        <span key={index}>{crumb}</span>
+      ))}
+    </div>
+  );
 };
 
 const Layout = ({ children, title, location }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
+  console.log('Location: ', location.pathname);
   if (location && location.pathname === rootPath) {
     header = (
       <div>
@@ -31,13 +37,7 @@ const Layout = ({ children, title, location }) => {
       </div>
     );
   } else {
-    header = (
-      <StyledCrumb>
-        <span>
-          <Link to={'/'}>{title}</Link>
-        </span>
-      </StyledCrumb>
-    );
+    header = <StyledCrumb>{renderBreadcrumb(location.pathname)}</StyledCrumb>;
   }
   return (
     <React.Fragment>

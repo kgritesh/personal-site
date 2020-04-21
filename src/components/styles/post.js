@@ -3,7 +3,6 @@ import { rhythm, scale } from '../../utils/typography';
 import { colors } from '../../utils/theme';
 
 export const StyledDate = styled.p`
-  ${scale(-1 / 5)};
   display: block;
   margin-bottom: ${rhythm(1)};
   margin-top: ${rhythm(-1)};
@@ -21,11 +20,37 @@ export const StyledNextPrev = styled.ul`
   }
 `;
 
+export const StyledCompany = styled.div`
+  font-weight: 500;
+  margin-bottom: 5px;
+  h4 {
+    display: inline;
+  }
+`;
+
+export const StyledLink = styled.div`
+  margin-bottom: 5px;
+  h4 {
+    display: inline;
+  }
+  a {
+    color: ${colors.blue};
+  }
+`;
+
 export const StyledTech = styled.div`
+  h4 {
+    margin-bottom: 5px;
+  }
+
+  .wrapper {
+    padding: 8px;
+  }
+
   span {
     margin-right: 10px;
     border: 1px solid ${colors.purple};
-    padding: 4px 8px;
+    padding: 0px 8px;
     border-radius: 10px;
     color: ${colors.purple};
 
@@ -37,6 +62,7 @@ export const StyledTech = styled.div`
 `;
 
 export const StyledPost = styled.div`
+  margin-top: 10px;
   animation-name: fadeIn;
   animation-duration: 0.5s;
   .gatsby-image-wrapper {

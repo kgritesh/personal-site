@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1,h2,h3 {
     margin-top: ${rhythm(1)};
+    margin-bottom: ${rhythm(1)};
     color: ${colors.headings};
       a {
       box-shadow: none;
@@ -137,35 +138,13 @@ export const GlobalStyle = createGlobalStyle`
       text-align: center;
     }
 
-    .introSocialLinks {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      width: 90vw;
-      max-width: 350px;
-      margin: 0;
-
-      li {
-        list-style-type: none;
-        height: 45px;
-        width: 45px;
-        transition: 0.2s;
-        background-color: '#f9f9f9';
-        transition: '0.37s';
-      }
-
-      li:hover {
-        transform: translateY(-10px);
-      }
-
-      .icon {
-        transition: '0.37s';
-        height: 15px;
-        width: auto;
-        background-color: '#f9f9f9';
-        fill: '#080708';
-      }
+    .description {
+      font-size: 1.85rem;
+      font-weight: 500;
+      font-style: normal;
+      color: #000;
+      width: 90%;
+      margin: 0 auto 30px;
     }
   }
   @media (min-width: 880px) {

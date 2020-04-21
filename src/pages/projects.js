@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { StyledProject, StyledSummary } from '../components/styles/projects';
 import SEO from '../components/SEO';
+import PostFooter from '../components/PostFooter';
 
 class BlogIndex extends React.Component {
   render() {
@@ -13,10 +14,12 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title="Projects">
         <SEO frontmatter={{ title: 'Projects', slug: '/projects' }} />
+        <h1>Projects</h1>
         <p>
-          I love building things. 👷 These are the stuff I built. <br />
-          Some for fun. 🤸🏻‍♂️ Some for productivity! 👨🏻‍💻
+          I love to build stuff. This is the list of some of the interesting projects that i have
+          hacked on over the years
         </p>
+
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
@@ -26,26 +29,12 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <small>{node.frontmatter.period}</small>
+              <p dangerouslySetInnerHTML={{ __html: node.frontmatter.description }} />
             </StyledProject>
           );
         })}
-        <hr />
-        <StyledSummary>
-          <i>Follow me on </i>
-          <a href="https://github.com/aravindballa" target="_blank">
-            Github
-          </a>{' '}
-          <i>
-            for a complete list of repos and to know what I am working on right now. Also, checkout
-            my developer story at{' '}
-          </i>
-          <a href="https://stackoverflow.com/story/aravindballa" target="_blank">
-            Stack Overflow
-          </a>
-          <i>.</i>
-        </StyledSummary>
+        <PostFooter />
       </Layout>
     );
   }
@@ -57,18 +46,19 @@ export const pageQuery = graphql`
   query {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false }, type: { eq: null } } }
+      filter: { frontmatter: { published: { ne: false }, type: { eq: "project" } } }
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            period
             title
             published
+            description
           }
         }
       }
