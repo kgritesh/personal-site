@@ -8,19 +8,19 @@ companyURL: 'https://loanzen.in'
 source: null
 type: 'project'
 published: true
-description: 'Collect and analyse transactional SMS for generating a credit score'
+description: 'Automated SMS Tagging, and Bank Statement Analysis'
 ---
 
 This was a project that i built for my startup [Loanzen](https://loanzen.in). At Loanzen, we were lending capital to unregulated and often unorganized SME sector. We built this module to collect transactional SMS from our borrower's phone. process them, categorise them and provide us with rich source of their day to day financial transactions.
 
-The project composed of modules
+The project composed of following modules
 
-- I built an android sdk that was responsible to continuosly monitor and collect the transactional( non personal) SMS from our borrowers, anonymize them and send it back to the server. The SDK tried to minimize battery usage, as well as could also work in offline mode.
+- An android SDK that was responsible for collecting user's non personal sms and sending them back to a configurable backend. The SDK was extremely configurable, allowing the app to decide at what frequency and what efficiency level they wanted to collect data at. We, also experimented with collecting notifications, user app usage and browser history.
 
 - A backend server written in golang responsible for storing the sms received from the android sdk.
 
-- An unsupervised ML model that helped my team to manually tag the huge corpus of SMS to generate training data.
+- An unsupervised clustering algorithm to convert our huge corpus of SMS data into clusters such that SMS in each cluster was similar in terms of its domain. We also built a custom UI that then allowed manually tagging these clusters instead of manually going over this huge corpus of SMS individually. This dramatically reduced the time to construct a training set for our supervised ML algorithm to automatically tag incoming SMS.
 
-- A python service responsible for tagging the SMS using our own version of hierarchical Bayseian model. The python service was also responsible for updating the model everyday based on the new incoming data. It also performed cross validation to ensure that performance of the model is not degrading, in which case it used to alert the dev team.
+- Implemented a new modified hierarchical Naive Bayes Algorithm to automatically tag incoming SMS. The system was designed with great instrumentation support as well as ability to automatically update the model everyday with new incoming data.
 
-- A python module responsible for further processing SMS tagged as 'financial transaction' and capture the actual amounts in the SMS. We experimented with ML model, but finally decided to use regexes depending upon the SMS tags as they gave the best performance.
+- Built a parser to create bank statement for the user from all the SMS tagged by our ML system to be related to banking transaction.
