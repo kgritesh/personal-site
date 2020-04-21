@@ -15,19 +15,19 @@ const Footer = () => (
   <StyledFooter>
     <p>
       Copyright whenever. This site is{' '}
-      <a href="https://github.com/aravindballa/website2017" target="_blank">
+      <a href="https://github.com/kgritesh/personal-site" target="_blank">
         opensource
       </a>
       .
       <br />
-      <a href="mailto:bsaaravind+website@gmail.com" rel="me">
+      <a href="mailto:ritesh+website@vertexcover.io" rel="me">
         mail
       </a>{' '}
       |{' '}
-      <a href="https://twitter.com/aravindballa" rel="me">
+      <a href="https://twitter.com/krg85" rel="me">
         twitter
       </a>{' '}
-      | <a href="https://aravindballa.com/rss.xml">rss</a>
+      | <a href="https://vertexcover.dev/rss.xml">rss</a>
     </p>
   </StyledFooter>
 );

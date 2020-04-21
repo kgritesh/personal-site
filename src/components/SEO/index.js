@@ -21,7 +21,6 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
             organization {
               name
               url
-              logo
             }
             social {
               twitter
@@ -50,8 +49,8 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
             <meta name="image" content={image} />
 
             {/* Webmentions */}
-            <link rel="webmention" href="https://webmention.io/aravindballa.com/webmention" />
-            <link rel="pingback" href="https://webmention.io/aravindballa.com/xmlrpc" />
+            <link rel="webmention" href="https://webmention.io/vertexcover.dev/webmention" />
+            <link rel="pingback" href="https://webmention.io/vertexcover.dev/xmlrpc" />
 
             {/* OpenGraph tags */}
             <meta property="og:url" content={url} />

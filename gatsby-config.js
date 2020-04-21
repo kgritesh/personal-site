@@ -5,15 +5,14 @@ module.exports = {
     title: 'Ritesh Kadmawala',
     author: 'Ritesh Kadmawala',
     image: 'https://vertexcover.io/avatar.jpg',
-    description: 'Discoveries and rants of a developer while developing stuff',
+    description: "Ritesh Kadmawala's Profile",
     siteUrl: 'https://vertexcover.io/',
     social: {
-      twitter: 'aravindballa',
+      twitter: 'krg85',
     },
     organization: {
       name: 'Ritesh Kadmawala',
-      url: 'https://vertexcover.io',
-      logo: 'https://vertexcover.io/logo.png',
+      url: 'https://vertexcover.dev',
     },
   },
   pathPrefix: '/',
