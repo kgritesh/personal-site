@@ -143,7 +143,6 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: 500;
       font-style: normal;
       color: #000;
-      width: 90%;
       margin: 0 auto 30px;
     }
   }
@@ -173,7 +172,7 @@ export const GlobalStyle = createGlobalStyle`
 export const StyledLayout = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
+  max-width: 860px;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
   ${({ isIndex }) => (isIndex ? '' : `min-height: calc(100vh - 88px);`)}
 `;
