@@ -28,7 +28,6 @@ const renderBreadcrumb = (pathname) => {
 const Layout = ({ children, title, location }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
-  console.log('Location: ', location.pathname);
   if (location && location.pathname === rootPath) {
     header = (
       <div>
