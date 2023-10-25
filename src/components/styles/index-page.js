@@ -29,7 +29,7 @@ export const StyledIndex = styled.div`
   .introSocialLinks {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: auto;
 
@@ -54,6 +54,12 @@ export const StyledIndex = styled.div`
       fill: '#080708';
     }
   }
+  @media (max-width: 600px) {
+    nav p {
+      font-size: 1.5em !important;
+    }
+  }
+
   @media (min-width: 880px) {
     .introSocialLinks {
       margin-bottom: 25px;

@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { scale } from '../utils/typography';
+import { colors } from '../utils/theme';
 
 const StyledFooter = styled.footer`
   text-align: center;
-  color: rgba(255, 255, 255, 0.4);
+  color: ${colors.lightBlack};
   ${scale(-0.5)}
   a {
-    color: rgba(255, 255, 255, 0.4);
+    color: ${colors.lightBlack};
   }
 `;
 

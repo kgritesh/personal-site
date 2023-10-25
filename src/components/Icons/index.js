@@ -2,6 +2,43 @@ import React from 'react';
 
 import { colors } from '../../utils/theme';
 
+export const ArrowRight = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    width="10"
+    height="10"
+    viewBox="0 0 10 10"
+    xmlSpace="preserve"
+  >
+    <desc>Created with Fabric.js 3.5.0</desc>
+    <defs></defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" />
+    <g transform="matrix(1.8181 0 0 2.8759 387.7856 354.7706)" id="987416">
+      <path
+        style={{
+          stroke: 'none',
+          strokeWidth: 1,
+          strokeDasharray: 'none',
+          strokeLinecap: 'butt',
+          strokeDashoffset: 0,
+          strokeLinejoin: 'miter',
+          strokeMiterlimit: 4,
+          fontFileUrl: 'none',
+          fill: 'rgb(0,0,0)',
+          fillRule: 'evenodd',
+          opacity: 1,
+        }}
+        // style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: evenodd; opacity: 1;"
+        vector-effect="non-scaling-stroke"
+        transform=" translate(-5.4996, -10)"
+        d="M 0.366 19.708 c 0.405 0.39 1.06 0.39 1.464 0 l 8.563 -8.264 a 1.95 1.95 0 0 0 0 -2.827 L 1.768 0.292 A 1.063 1.063 0 0 0 0.314 0.282 a 0.976 0.976 0 0 0 -0.011 1.425 l 7.894 7.617 a 0.975 0.975 0 0 1 0 1.414 L 0.366 18.295 a 0.974 0.974 0 0 0 0 1.413"
+        stroke-linecap="round"
+      />
+    </g>
+  </svg>
+);
 export const GithubIcon = () => (
   <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <path

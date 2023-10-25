@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { StyledIndex } from '../components/styles/index-page';
+import { StyledIndex, ThemeSwitch } from '../components/styles/index-page';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import { LinkedinIcon, GithubIcon, TwitterIcon, ResumeIcon, EmailIcon } from '../components/Icons';

@@ -4,8 +4,8 @@ import { colors } from '../../utils/theme';
 
 export const StyledDate = styled.p`
   display: block;
-  margin-bottom: ${rhythm(1)};
-  margin-top: ${rhythm(-1)};
+  margin-bottom: 10px;
+  margin-top: -25px;
   color: ${colors.blue};
 `;
 
@@ -22,7 +22,7 @@ export const StyledNextPrev = styled.ul`
 
 export const StyledCompany = styled.div`
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-top: 10px;
   h4 {
     display: inline;
   }
@@ -44,15 +44,19 @@ export const StyledTech = styled.div`
   }
 
   .wrapper {
-    padding: 8px;
+    padding: 8px 8px 8px 0px;
+    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   span {
-    margin-right: 10px;
-    border: 1px solid ${colors.purple};
-    padding: 0px 8px;
-    border-radius: 10px;
-    color: ${colors.purple};
+    border: 1px solid var(--purple, #8a65aa);
+    padding: 2px 8px;
+    line-height: normal;
+    border-radius: 15px;
+    color: var(--purple, #8a65aa);
+    cursor: pointer;
 
     &:hover {
       color: magenta;
@@ -70,8 +74,6 @@ export const StyledPost = styled.div`
   }
   a {
     color: ${colors.headings};
-    text-decoration: underline;
-    text-decoration-color: ${colors.red};
 
     &:hover {
       color: ${colors.text};
