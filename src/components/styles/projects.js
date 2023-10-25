@@ -5,7 +5,8 @@ import { colors } from '../../utils/theme';
 export const StyledProject = styled.div`
   animation-name: fadeIn;
   animation-duration: 0.5s;
-  padding: 10px 15px;
+    border:1px solid transparent;
+    padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
     a{
