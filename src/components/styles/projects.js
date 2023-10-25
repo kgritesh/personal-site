@@ -39,6 +39,11 @@ width:fit-content;    display: flex;
     border:1px solid ${colors.lightBlack};
     border-radius: 8px;
   }
+  @media (max-width: 800px) {
+  h3{
+    border-bottom:2px solid black;
+  }
+  }
 `;
 
 export const StyledArticle = styled.div`

@@ -29,6 +29,7 @@ export const StyledCompany = styled.div`
 `;
 
 export const StyledLink = styled.div`
+  margin-top: 5px;
   margin-bottom: 5px;
   h4 {
     display: inline;

@@ -1,4 +1,4 @@
-const updateFavicon = isDark => {
+const updateFavicon = (isDark) => {
   const faviconEL = document.querySelector('link[rel="icon"]');
   faviconEL.href = isDark ? '/logo-dark.png' : '/icons/icon-48x48.png';
 };
@@ -12,8 +12,8 @@ export const onRouteUpdate = () => {
       const repo = card.dataset.repo;
 
       fetch(`https://api.github.com/repos/${username}/${repo}`)
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           card.innerHTML = `
           <div class="card">
             <div class="main">
@@ -45,17 +45,14 @@ export const onRouteUpdate = () => {
     }
   }
 
+  document.querySelector('body').classList.add('theme-light');
   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  darkModeMediaQuery.addListener(e => {
+  darkModeMediaQuery.addListener((e) => {
     updateFavicon(e.matches);
-    document.querySelector('body').classList.remove('theme-dark', 'theme-light');
-    document.querySelector('body').classList.add(e.matches ? 'theme-dark' : 'theme-light');
+    // document.querySelector('body').classList.remove('theme-dark', 'theme-light');
+    // document.querySelector('body').classList.add(e.matches ? 'theme-dark' : 'theme-light');
   });
   if (darkModeMediaQuery.matches) updateFavicon(true);
-
-  document
-    .querySelector('body')
-    .classList.add(darkModeMediaQuery.matches ? 'theme-dark' : 'theme-light');
 };
 
 export const onServiceWorkerUpdateFound = () => {

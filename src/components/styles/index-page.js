@@ -23,6 +23,15 @@ export const StyledIndex = styled.div`
     p {
       font-size: 2em;
       font-weight: 500;
+      color: white;
+      padding: 0px 15px;
+      background: black;
+      border-radius: 8px;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 
