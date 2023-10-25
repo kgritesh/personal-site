@@ -53,6 +53,9 @@ export const StyledProject = styled.div`
     h3 {
       border-bottom: 2px solid black;
     }
+    :hover {
+      border: 1px solid transparent;
+    }
   }
 `;
 
