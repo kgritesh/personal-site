@@ -28,7 +28,10 @@ export const GlobalStyle = createGlobalStyle`
       color: inherit;
 
       &:hover {
-        text-decoration: none;
+        // text-decoration: none;
+        text-decoration: underline;
+        text-decoration-color: ${colors.red};
+     
       }
     }
   }
@@ -93,7 +96,9 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 200;
         margin: 0;
         a {
-          color: ${colors.gray500};
+          color: ${colors.blue};
+          font-weight:400
+
         }
       }
     }
@@ -144,7 +149,18 @@ export const GlobalStyle = createGlobalStyle`
       font-style: normal;
       color: #000;
       margin: 0 auto 30px;
+      text-align: center;
+
     }
+  }
+  @media (max-width: 600px) {
+    .headline {
+      font-size:      2.5rem !important;
+    }
+    .description {
+      font-size: 1.2rem !important;
+    }
+
   }
   @media (min-width: 880px) {
     .indexIntro {
@@ -178,6 +194,9 @@ export const StyledLayout = styled.div`
 `;
 
 export const StyledCrumb = styled.h2`
+  a:hover {
+    text-decoration: none;
+  }
   a {
     box-shadow: none;
     text-decoration: none;

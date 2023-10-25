@@ -13,6 +13,7 @@ export const colors = {
   gray700: 'var(--gray700, #242424)',
   gray500: 'var(--gray500, #4F4F4F)',
   inverseBg: 'var(--inverse-bg, #fff)',
+  lightBlack: 'var(--light-black, #7a7a7a)',
 };
 
 export const themeVariables = css`
@@ -30,6 +31,7 @@ export const themeVariables = css`
     --headings: #ffffff;
     --gray700: #242424;
     --gray500: #4f4f4f;
+    --light-black: #7a7a7a;
     --inverse-bg: #fff;
   }
   .theme-light {
@@ -38,6 +40,7 @@ export const themeVariables = css`
     --headings: #000;
     --gray700: #f4f4f4;
     --gray500: #4f4f4f;
+    --light-black: #7a7a7a;
     --inverse-bg: #000;
   }
 `;

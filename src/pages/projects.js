@@ -2,9 +2,10 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { StyledProject, StyledSummary } from '../components/styles/projects';
+import { PostWrap, StyledProject, StyledSummary } from '../components/styles/projects';
 import SEO from '../components/SEO';
 import PostFooter from '../components/PostFooter';
+import { ArrowRight } from '../components/Icons';
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,20 +21,23 @@ class BlogIndex extends React.Component {
           hacked on over the years
         </p>
 
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <StyledProject key={node.fields.slug}>
-              <h3>
+        <PostWrap>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <StyledProject key={node.fields.slug}>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
+                  <h3>
+                    {title}
+                    {/* <ArrowRight className="arrow" /> */}
+                  </h3>
+                  <small>{node.frontmatter.period}</small>
+                  <p dangerouslySetInnerHTML={{ __html: node.frontmatter.description }} />
                 </Link>
-              </h3>
-              <small>{node.frontmatter.period}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.frontmatter.description }} />
-            </StyledProject>
-          );
-        })}
+              </StyledProject>
+            );
+          })}
+        </PostWrap>
         <PostFooter />
       </Layout>
     );

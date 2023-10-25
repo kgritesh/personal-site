@@ -23,13 +23,22 @@ export const StyledIndex = styled.div`
     p {
       font-size: 2em;
       font-weight: 500;
+      color: white;
+      padding: 0px 15px;
+      background: black;
+      border-radius: 8px;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 
   .introSocialLinks {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: auto;
 
@@ -54,6 +63,12 @@ export const StyledIndex = styled.div`
       fill: '#080708';
     }
   }
+  @media (max-width: 600px) {
+    nav p {
+      font-size: 1.5em !important;
+    }
+  }
+
   @media (min-width: 880px) {
     .introSocialLinks {
       margin-bottom: 25px;
