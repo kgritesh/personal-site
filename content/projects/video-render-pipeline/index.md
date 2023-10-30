@@ -6,7 +6,7 @@ technologies: 'Typescript, pnpm, ffmpeg, python'
 source: null
 type: 'project'
 companyURL: 'https://rephrase.ai'
-published: true
+published: false
 description: 'A case study on how we built a new video rendering engine in 4 months'
 ---
 
