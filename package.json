@@ -40,7 +40,7 @@
     "react-live": "^2.2.3",
     "react-typography": "^0.16.13",
     "serve": "^11.3.2",
-    "sharp": "^0.27.0",
+    "sharp": "^0.32.6",
     "styled-components": "^4.1.2",
     "typography": "^0.16.17",
     "unist-util-visit": "^2.0.2"
